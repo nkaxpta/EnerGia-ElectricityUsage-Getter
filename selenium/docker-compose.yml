@@ -1,0 +1,23 @@
+version: "3"
+services:
+  selenium:
+    image: selenium/standalone-chrome:latest
+    container_name: selenium-container
+    ports:
+      - 4444:4444
+      - 7900:7900
+    volumes:
+      - /dev/shm:/dev/shm
+
+  jupyterlab:
+    build: .
+    container_name: jupyterlab-selenium
+    working_dir: /workspace
+    volumes:
+      - ../workspace:/workspace
+    ports:
+      - "8888:8888"
+    environment:
+      SELENIUM_URL: http://selenium:4444/wd/hub
+    command: jupyter-lab --ip=0.0.0.0 --allow-root -b localhost --NotebookApp.token=""
+    tty: true

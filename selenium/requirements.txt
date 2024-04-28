@@ -1,0 +1,8 @@
+selenium
+jupyter
+requests
+BeautifulSoup4
+chromedriver-binary
+pandas
+openpyxl
+python-dotenv

@@ -1,0 +1,10 @@
+# Jupyter Lab
+.ipynb_checkpoints
+.Trash-*
+Untitled*
+
+# Artifact
+*.xlsx
+
+# Environment
+.env
